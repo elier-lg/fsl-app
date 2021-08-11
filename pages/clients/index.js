@@ -1,9 +1,9 @@
-import TopBar from "../../components/topTab"
+import SideBar from "../../components/sideBar"
 
 export default function Clients() {
 
   return <>
-    <TopBar />
+    <SideBar />
     <h1>Clients list</h1>
   </>
 }
