@@ -1,0 +1,11 @@
+.fixedHeight {
+  height: 240;
+  background-color: red;
+}
+.paper {
+  padding: 2;
+  display: 'flex';
+  overflow: 'auto';
+  flex-direction: 'column';
+  background-color: green;
+}
