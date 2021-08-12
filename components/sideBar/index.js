@@ -26,7 +26,6 @@ export const SideBar = ({open, onHandleDrawer}) => {
           <ChevronLeftIcon />
         </IconButton>
       </div>
-      <Divider />
       <List>{mainListItems}</List>
     </Drawer>
   );

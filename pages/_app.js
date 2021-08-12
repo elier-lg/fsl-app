@@ -3,6 +3,7 @@ import { Layout } from '../components/layout';
 import Head from 'next/head'
 import '@fontsource/roboto';
 import { useEffect } from 'react'
+import { ThemeProvider } from '../providers/theme-provider';
 
 const App = ({ Component, pageProps }) => {
 
@@ -24,9 +25,11 @@ const App = ({ Component, pageProps }) => {
       </Head>
       <>
         <CssBaseline />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <ThemeProvider>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </ThemeProvider>
       </>
     </>
   )
