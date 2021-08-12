@@ -8,8 +8,6 @@ import IconButton from '@material-ui/core/IconButton';
 import { useStyles } from './styles'
 
 export const TopBar = ({ open, onHandleDrawer }) => {
-
-  console.log('TopBar', open);
   const classes = useStyles();
 
   return <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
