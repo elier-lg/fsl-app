@@ -34,12 +34,15 @@ export const mainListItems = (isSelected) => {
           <ListItemText primary="Clients" />
         </ListItem>
       </Link>
-      <ListItem button>
-        <ListItemIcon selected={isSelected("/proyects")}>
-          <LayersIcon />
-        </ListItemIcon>
-        <ListItemText primary="Projects" />
-      </ListItem>
+      <Link href="/projects">
+        <ListItem button>
+          <ListItemIcon selected={isSelected("/proyects")}>
+            <LayersIcon />
+          </ListItemIcon>
+          <ListItemText primary="Projects" />
+        </ListItem>
+      </Link>
+
     </div>
   )
 
