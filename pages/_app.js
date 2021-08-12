@@ -14,9 +14,9 @@ const App = ({ Component, pageProps }) => {
       </Head>
       <>
         <CssBaseline />
-        <Layout>
+        {/* <Layout> */}
           <Component {...pageProps} />
-        </Layout>
+        {/* </Layout> */}
       </>
     </>
   )
