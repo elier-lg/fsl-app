@@ -1,9 +1,11 @@
-import SideBar from "../../components/sideBar"
-
+import { ClientOnly } from "../../components/client-only";
+import { ListClients } from "../../components/list-clients";
 export default function Clients() {
 
   return <>
-    <SideBar />
-    <h1>Clients list</h1>
+    <h1>Clients</h1>
+    <ClientOnly>
+      <ListClients />
+    </ClientOnly>
   </>
 }

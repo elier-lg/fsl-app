@@ -8,10 +8,15 @@ import { mainListItems } from './listItems';
 import { useStyles } from './styles';
 import Image from 'next/image'
 import { Divider } from '@material-ui/core';
-
+import { useRouter } from "next/router";
 
 export const SideBar = ({open, onHandleDrawer}) => {
   const classes = useStyles();
+  const router = useRouter();
+
+  const isPageSelected = (url) => {
+    return router.pathname.split("/")[1] === url.split("/")[1];
+  }
 
   return (
     <Drawer
@@ -28,7 +33,7 @@ export const SideBar = ({open, onHandleDrawer}) => {
         </IconButton>
       </div>
       <Divider/>
-      <List>{mainListItems}</List>
+      <List>{mainListItems(isPageSelected)}</List>
     </Drawer>
   );
 }

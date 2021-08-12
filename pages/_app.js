@@ -4,6 +4,7 @@ import Head from 'next/head'
 import '@fontsource/roboto';
 import { useEffect } from 'react'
 import { ThemeProvider } from '../providers/theme-provider';
+import { ApolloProvider } from '../providers/apollo-provider';
 
 const App = ({ Component, pageProps }) => {
 
@@ -25,11 +26,13 @@ const App = ({ Component, pageProps }) => {
       </Head>
       <>
         <CssBaseline />
-        <ThemeProvider>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </ThemeProvider>
+        <ApolloProvider>
+          <ThemeProvider>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </ThemeProvider>
+        </ApolloProvider>
       </>
     </>
   )

@@ -7,35 +7,40 @@ import Link from 'next/link';
 import { ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 
 
-export const mainListItems = (
-  <div>
-    <Link href="/">
+export const mainListItems = (isSelected) => {
+  return (
+    <div>
+      <Link href="/">
+        <ListItem button selected={isSelected("/")}>
+          <ListItemIcon>
+            <DashboardIcon />
+          </ListItemIcon>
+          <ListItemText primary="Dashboard" />
+        </ListItem>
+      </Link>
+      <Link href="/employees">
+        <ListItem button selected={isSelected("/employees")}>
+          <ListItemIcon>
+            <PeopleIcon />
+          </ListItemIcon>
+          <ListItemText primary="Employees" />
+        </ListItem>
+      </Link>
+      <Link href="/clients">
+        <ListItem button selected={isSelected("/clients")}>
+          <ListItemIcon>
+            <BarChartIcon />
+          </ListItemIcon>
+          <ListItemText primary="Clients" />
+        </ListItem>
+      </Link>
       <ListItem button>
-        <ListItemIcon>
-          <DashboardIcon />
+        <ListItemIcon selected={isSelected("/proyects")}>
+          <LayersIcon />
         </ListItemIcon>
-        <ListItemText primary="Dashboard" />
+        <ListItemText primary="Projects" />
       </ListItem>
-    </Link>
-    <Link href="/employees">
-      <ListItem button>
-        <ListItemIcon>
-          <PeopleIcon />
-        </ListItemIcon>
-        <ListItemText primary="Employees" />
-      </ListItem>
-    </Link>
-    <ListItem button>
-      <ListItemIcon>
-        <BarChartIcon />
-      </ListItemIcon>
-      <ListItemText primary="Clients" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <LayersIcon />
-      </ListItemIcon>
-      <ListItemText primary="Projects" />
-    </ListItem>
-  </div>
-);
+    </div>
+  )
+
+}
